@@ -69,10 +69,10 @@ exports.defineAutoTests = function() {
         describe('API callbacks', function () {
 			
 			var originalTimeout;
-			
+
 			beforeEach(function() {
 				originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
-				jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
+				jasmine.DEFAULT_TIMEOUT_INTERVAL = 50000;
 			});
 
 			afterEach(function() {
