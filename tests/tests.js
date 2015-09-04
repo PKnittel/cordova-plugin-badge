@@ -70,51 +70,65 @@ exports.defineAutoTests = function() {
 
             it("clear should invoke callback", function(done) {
 				var succes = jasmine.createSpy('succes');
-                cordova.plugins.notification.badge.clear(succes);
-				expect(succes).toHaveBeenCalled();
-				done();
+                cordova.plugins.notification.badge.clear(function(){
+					succes();
+					expect(succes).toHaveBeenCalled();
+					done();
+				});
             });
 
             it("get should invoke callback", function(done) {
 				var succes = jasmine.createSpy('succes');
-                cordova.plugins.notification.badge.get(succes);
-				expect(succes).toHaveBeenCalled();
-				done();
+                cordova.plugins.notification.badge.get(function(){
+					succes();
+					expect(succes).toHaveBeenCalled();
+					done();
+				});
             });
 
             it("set should invoke callback", function(done) {
 				var succes = jasmine.createSpy('succes');
-                cordova.plugins.notification.badge.set(10,succes);
-				expect(succes).toHaveBeenCalled();
-				done();
+                cordova.plugins.notification.badge.set(10,function(){
+					succes();
+					expect(succes).toHaveBeenCalled();
+					done();
+				});
             });
 
             it("increase should invoke callback", function(done) {
 				var succes = jasmine.createSpy('succes');
-                cordova.plugins.notification.badge.increase(1,succes);
-				expect(succes).toHaveBeenCalled();
-				done();
+                cordova.plugins.notification.badge.increase(1,function(){
+					succes();
+					expect(succes).toHaveBeenCalled();
+					done();
+				});
             });
 
             it("decrease should invoke callback", function(done) {
 				var succes = jasmine.createSpy('succes');
-                cordova.plugins.notification.badge.decrease(1,succes);
-				expect(succes).toHaveBeenCalled();
-				done();
+                cordova.plugins.notification.badge.decrease(1,function(){
+					succes();
+					expect(succes).toHaveBeenCalled();
+					done();
+				});
             });
 
             it("hasPermission should invoke callback", function(done) {
 				var succes = jasmine.createSpy('succes');
-                cordova.plugins.notification.badge.hasPermission(succes);
-				expect(succes).toHaveBeenCalled();
-				done();
+                cordova.plugins.notification.badge.hasPermission(function(){
+					succes();
+					expect(succes).toHaveBeenCalled();
+					done();
+				});
             });
 
             it("registerPermission should invoke callback", function(done) {
 				var succes = jasmine.createSpy('succes');
-                cordova.plugins.notification.badge.registerPermission(succes);
-				expect(succes).toHaveBeenCalled();
-				done();
+                cordova.plugins.notification.badge.registerPermission(function(){
+					succes();
+					expect(succes).toHaveBeenCalled();
+					done();
+				});
             });
 
         });
