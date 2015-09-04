@@ -68,6 +68,24 @@ exports.defineAutoTests = function() {
 
         describe('API callbacks', function () {
 
+            it("registerPermission should invoke callback", function(done) {
+				var succes = jasmine.createSpy('succes');
+                cordova.plugins.notification.badge.registerPermission(function(){
+					succes();
+					expect(succes).toHaveBeenCalled();
+					done();
+				});
+            });
+			
+			it("hasPermission should invoke callback", function(done) {
+				var succes = jasmine.createSpy('succes');
+                cordova.plugins.notification.badge.hasPermission(function(){
+					succes();
+					expect(succes).toHaveBeenCalled();
+					done();
+				});
+            });
+
             it("clear should invoke callback", function(done) {
 				var succes = jasmine.createSpy('succes');
                 cordova.plugins.notification.badge.clear(function(){
@@ -107,24 +125,6 @@ exports.defineAutoTests = function() {
             it("decrease should invoke callback", function(done) {
 				var succes = jasmine.createSpy('succes');
                 cordova.plugins.notification.badge.decrease(1,function(){
-					succes();
-					expect(succes).toHaveBeenCalled();
-					done();
-				});
-            });
-
-            it("hasPermission should invoke callback", function(done) {
-				var succes = jasmine.createSpy('succes');
-                cordova.plugins.notification.badge.hasPermission(function(){
-					succes();
-					expect(succes).toHaveBeenCalled();
-					done();
-				});
-            });
-
-            it("registerPermission should invoke callback", function(done) {
-				var succes = jasmine.createSpy('succes');
-                cordova.plugins.notification.badge.registerPermission(function(){
 					succes();
 					expect(succes).toHaveBeenCalled();
 					done();
