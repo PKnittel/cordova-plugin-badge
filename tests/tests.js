@@ -70,13 +70,15 @@ exports.defineAutoTests = function() {
 			
 			var originalTimeout;
 
-			beforeEach(function() {
+			beforeEach(function(done) {
 				originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
 				jasmine.DEFAULT_TIMEOUT_INTERVAL = 50000;
+				done();
 			});
 
-			afterEach(function() {
+			afterEach(function(done) {
 				jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
+				done();
 			});
 
             it("registerPermission should invoke callback", function(done) {
