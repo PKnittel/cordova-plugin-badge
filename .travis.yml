@@ -9,5 +9,6 @@ install:
   - npm install -g cordova-paramedic
   - npm install -g cordova
   - npm install -g ios-sim
+  - DevToolsSecurity -enable
 script:
   - cordova-paramedic --platform ios --plugin ${TRAVIS_BUILD_DIR}
