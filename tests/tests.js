@@ -66,7 +66,7 @@ exports.defineAutoTests = function() {
 
         });
 
-        describe('API callbacks', function () {
+        /*describe('API callbacks', function () {
 			
 			var originalTimeout;
 
@@ -144,7 +144,7 @@ exports.defineAutoTests = function() {
 				});
             });
 
-        });
+        });*/
 
         describe('API functions', function () {
 
